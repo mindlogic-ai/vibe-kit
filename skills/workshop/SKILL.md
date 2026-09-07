@@ -24,7 +24,7 @@ If any fails, follow the matching skill (`github-push`) or the README's pre-work
 
 ## Hour one: everyone builds the same thing, "My Work Board"
 
-Starting state: the user ran `claude` inside the `vibe-starter` folder.
+Starting state: the user cloned the `vibe-starter` template into `my-board` and opened that folder in the Claude desktop app (Code tab, Local). Some may use the `claude` CLI instead; both work the same.
 Already in the starter: a Next.js app, the Supabase client, SQL for an `items` table (`supabase/schema.sql`), and one page with a list, an add form, and a done toggle.
 
 Steps (each starts when the user pastes the card):
@@ -95,15 +95,13 @@ Save what you just wrote as a .docx (or .pptx) file.
 |---|---|
 | "I don't know what to ask" | "Just say what you want in plain language. If you are unsure, ask me 'how do I…'." Also `/help` and `/powerup` |
 | "What is a project?" | A folder. Run `claude` in it and that folder is the world. `CLAUDE.md` is the note read every time; `/init` writes it |
-| "Continue yesterday's work" | Same folder, `claude --continue`, or `/resume` |
-| "Answers got slow and weird" | The conversation is full. `/context` to check, `/compact` to summarize, `/clear` and start fresh for a new feature |
-| "I broke it" | `/rewind` rolls back both the chat and the files |
-| "It asks permission every time" | `Shift+Tab` to accept-edits mode. Risky commands still ask |
+| "Continue yesterday's work" | Desktop: click the session in the sidebar. CLI: `claude --continue` |
+| "Answers got slow and weird" | The conversation is full. `/compact` to summarize; start a new session for a new feature |
+| "I broke it" | Desktop: ask "undo the last change" and revert with git. CLI: `/rewind` |
+| "It asks permission every time" | Desktop: switch the mode selector to Auto or Accept edits. CLI: `Shift+Tab` |
 | "Show you a file" | `@filename` in the message |
-| "Show you an error" | Copy a screenshot, then `Ctrl+V` (Ctrl on Mac too) |
-| "Stop" | `Esc` |
-| "New line" | `\` then Enter, or Shift+Enter |
-| "How much have I used" | `/usage` |
+| "Show you an error" | Paste or drag the screenshot into the prompt box |
+| "Stop" | Desktop: the stop button. CLI: `Esc` |
 
 ## Glossary (one line, first time only)
 

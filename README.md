@@ -2,34 +2,33 @@
 
 Skills for the MindLogic vibe-coding workshop (2026-09-08). Install once, then Claude Code knows the workshop flow, the prompt cards, and how to reach GitHub, Supabase, Vercel, the FactChat Gateway, and the Informe CLI with plain API keys and CLIs. No MCP servers.
 
-## Install (one line, after Node is installed)
+## Install
+
+Attendees use the Claude desktop app, so the kit is delivered as a zip in Slack. Unzip it and move the folders inside into `~/.claude/skills/` (Mac: Finder, Cmd+Shift+G, type the path) or `%USERPROFILE%\.claude\skills\` (Windows). Create the `skills` folder if it does not exist. Claude picks them up on the next session.
+
+Mac one-liner, if the terminal is easier:
+
+```bash
+mkdir -p ~/.claude/skills && cp -R ~/Downloads/vibe-kit-skills/* ~/.claude/skills/
+```
+
+If Node is installed, this does the same thing:
 
 ```bash
 npx skills add mindlogic-ai/vibe-kit -a claude-code -g
 ```
 
-Or from inside Claude Code:
-
-```
-/plugin marketplace add mindlogic-ai/vibe-kit
-/plugin install vibe-kit@vibe-kit
-```
-
-No Node yet, or `npx` fails on the office Wi-Fi: download the zip from the Releases page and unzip it so the folders land in `~/.claude/skills/` (Mac) or `%USERPROFILE%\.claude\skills\` (Windows).
-
-Check it worked: start `claude` anywhere and ask "what does the workshop skill say hour one is?"
+Check it worked: open any folder in the Code tab and ask "what does the workshop skill say hour one is?"
 
 ## Pre-work (20 to 30 minutes, do it before the workshop)
 
 | Step | Mac | Windows |
 |---|---|---|
-| 1. Open a terminal | Cmd+Space, type Terminal | Win+X, choose Terminal or PowerShell |
-| 2. git | Run `git --version`; accept the Command Line Tools popup and wait | Install [Git for Windows](https://git-scm.com/downloads/win), all defaults |
-| 3. Claude Code | `curl -fsSL https://claude.ai/install.sh \| bash` | `irm https://claude.ai/install.ps1 \| iex` |
-| 4. Log in | Type `claude`, the browser opens, use the company Claude account | same |
-| 5. Node | [nodejs.org](https://nodejs.org) LTS installer, all defaults | same |
-| 6. GitHub CLI | the macOS .pkg from [cli.github.com](https://cli.github.com), then `gh auth login` | `winget install GitHub.cli`, then `gh auth login` |
-| 7. This kit | the install line above | same |
+| 1. Claude desktop app | download the dmg, sign in with the company account, open the Code tab | download the installer, same |
+| 2. git | Terminal: `xcode-select --install`, accept the popup. Do not follow the app's git-scm.com link; that page starts with Homebrew | Install [Git for Windows](https://git-scm.com/downloads/win), all defaults, then fully restart the Claude app |
+| 3. Node | [nodejs.org](https://nodejs.org) LTS installer, all defaults | same |
+| 4. GitHub CLI | the macOS .pkg from [cli.github.com](https://cli.github.com), then `gh auth login` | `winget install GitHub.cli`, then `gh auth login` |
+| 5. This kit | the zip from Slack, see Install above | same |
 
 Accounts to have (all free): [GitHub](https://github.com/signup), [Vercel](https://vercel.com/signup), [Supabase](https://supabase.com/dashboard/sign-up).
 
