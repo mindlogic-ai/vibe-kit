@@ -43,7 +43,7 @@ Accounts to have (all free): [GitHub](https://github.com/signup), [Vercel](https
 | `supabase-keys` | project, URL and anon key into `.env.local`, SQL pasted into the SQL Editor |
 | `vercel-deploy` | Vercel CLI login and deploy, env vars, auto-deploy on push, reading build logs |
 | `factchat-gateway` | add AI to the app through MindLogic's OpenAI-compatible gateway, key kept server-side |
-| `informe-cli` | install `inf` (uv, cloudflared, org invite) and talk to the company agent |
+| `informe-cli` | install `inf` (uv, cloudflared) and talk to the company agent |
 | `impeccable` | design direction and an anti-pattern detector for "make it not look AI-generated" (Apache-2.0, pbakaus) |
 | `make-interfaces-feel-better` | polish details: spacing, shadows, typography, motion (jakubkrehel) |
 

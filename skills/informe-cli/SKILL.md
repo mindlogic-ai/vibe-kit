@@ -5,27 +5,26 @@ description: >-
   meeting notes, the business ledger, leads). Triggers on "ask Informe", "what
   happened with X at our company", revenue/user/credit lookups. Talks to MindLogic's
   internal agent Informe from the terminal via inf. Install needs three things
-  first - uv, cloudflared, and a mindlogic-ai GitHub invite.
+  first - uv and cloudflared. No GitHub invite needed; the CLI is a public mirror.
 ---
 
 # Installing the Informe CLI (after the workshop, 10 minutes)
 
 Informe is the same internal agent you use in Slack. `inf` is the terminal door to it, and inside Claude Code "ask Informe" makes this skill call it for you.
 
-## Three prerequisites
+## Two prerequisites
 
-1. **GitHub org invite.** The CLI lives in a private repo, so you must be a member of `mindlogic-ai`. Post your GitHub id in #바이브코딩-workshop and Jaeho invites you. Accept the invite email.
-2. **uv** (a Python tool installer)
+1. **uv** (a Python tool installer)
    - Mac: `curl -LsSf https://astral.sh/uv/install.sh | sh`
    - Windows PowerShell: `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"`
-3. **cloudflared** (company login)
+2. **cloudflared** (company login)
    - Mac: `brew install cloudflared` (no brew: the macOS pkg from https://github.com/cloudflare/cloudflared/releases)
    - Windows: `winget install Cloudflare.cloudflared`
 
 Open a new terminal, then:
 
 ```bash
-uv tool install "git+https://github.com/mindlogic-ai/mindlogic-claude-agent#subdirectory=cli"
+uv tool install "git+https://github.com/mindlogic-ai/informe-cli"
 inf setup
 cloudflared access login https://informe-agent.mindlogic.tools
 inf "hi, who am I?"
