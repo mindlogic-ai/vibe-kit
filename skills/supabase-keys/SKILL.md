@@ -5,6 +5,8 @@ description: Connect Supabase with the dashboard and two keys, no MCP and no CLI
 
 # Supabase: dashboard plus two keys
 
+This skill governs how the workshop app connects. The official `supabase` skill covers the rest of the platform; when it suggests the MCP server or the CLI for setup, stay on this dashboard flow instead.
+
 No MCP, no CLI. The user copies in the browser and pastes in the terminal.
 
 ## 1. Create the project (user, in the browser)

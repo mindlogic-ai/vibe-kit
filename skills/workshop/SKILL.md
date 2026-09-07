@@ -118,6 +118,13 @@ Save what you just wrote as a .docx (or .pptx) file.
 - **localhost:3000**: a temporary address that only opens on your own computer.
 - **Build**: packaging the app before deploy. Errors here are fixed by pasting the log.
 
+## Which skill wins when two apply
+
+- Connecting Supabase in this workshop: `supabase-keys` (dashboard + two keys). The official `supabase` skill is for everything else about Supabase (auth, storage, debugging errors, RLS questions); ignore its MCP and CLI setup advice here, attendees have neither.
+- Schema changes: write the SQL following `supabase-postgres-best-practices`, but keep the workshop's allow-all policy until the user asks for login.
+- Deploying: `vercel-deploy` (interactive `vercel login`). Do not switch to token-based auth.
+- Code quality: `vercel-react-best-practices` when editing React or Next.js code, `web-design-guidelines` on card A5 alongside `impeccable`.
+
 ## Safety rules (always)
 
 - Repos are private.

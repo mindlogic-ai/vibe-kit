@@ -44,6 +44,10 @@ Accounts to have (all free): [GitHub](https://github.com/signup), [Vercel](https
 | `vercel-deploy` | Vercel CLI login and deploy, env vars, auto-deploy on push, reading build logs |
 | `factchat-gateway` | add AI to the app through MindLogic's OpenAI-compatible gateway, key kept server-side |
 | `informe-cli` | install `inf` (uv, cloudflared) and talk to the company agent |
+| `supabase` | official Supabase skill: client libraries, auth, storage, debugging errors (supabase/agent-skills) |
+| `supabase-postgres-best-practices` | official Postgres rules for schema, migrations, RLS, indexes (supabase/agent-skills) |
+| `vercel-react-best-practices` | official React and Next.js performance rules (vercel-labs/agent-skills) |
+| `web-design-guidelines` | official UI review checklist for accessibility and UX (vercel-labs/agent-skills) |
 | `impeccable` | design direction and an anti-pattern detector for "make it not look AI-generated" (Apache-2.0, pbakaus) |
 | `make-interfaces-feel-better` | polish details: spacing, shadows, typography, motion (jakubkrehel) |
 
@@ -53,12 +57,11 @@ Accounts to have (all free): [GitHub](https://github.com/signup), [Vercel](https
 /plugin marketplace add anthropics/skills
 /plugin install document-skills@anthropic-agent-skills      # Word, PowerPoint, Excel, PDF output
 /plugin install frontend-design@claude-plugins-official      # stronger UI generation
-npx skills add vercel-labs/agent-skills --skill web-design-guidelines -a claude-code -g
-npx skills add vercel-labs/agent-skills --skill react-best-practices -a claude-code -g
-npx skills add supabase/agent-skills --skill supabase-postgres-best-practices -a claude-code -g
 ```
 
-Each installed skill adds its description to every session, so add these when you need them, not all at once.
+Each installed skill adds its description to every session, so add these when you need them.
+
+The four official skills bundled here (supabase, supabase-postgres-best-practices, vercel-react-best-practices, web-design-guidelines) are verbatim copies from `supabase/agent-skills` and `vercel-labs/agent-skills` as of 2026-09-07. To refresh them: `npx skills add supabase/agent-skills -a claude-code -g` and `npx skills add vercel-labs/agent-skills -a claude-code -g`.
 
 ## Starter app
 
