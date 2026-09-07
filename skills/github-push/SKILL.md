@@ -17,9 +17,27 @@ gh auth login
 ```
 Answers: `GitHub.com` → `HTTPS` → `Yes` (let gh handle git auth) → `Login with a web browser`. Copy the 8-character code from the terminal into the browser. This one login also makes `git push` work without a password from now on.
 
-If `gh` itself is missing: Mac uses the macOS .pkg from https://cli.github.com, Windows runs `winget install GitHub.cli` in PowerShell. Open a new terminal afterwards.
+If `gh` itself is missing, run the `setup-machine` skill (no admin password needed on Mac).
+
+`gh auth login` is interactive: the user runs it in the app terminal (**Ctrl+`**), not you.
 
 ## 1. First upload (no repo yet)
+
+### 1a. Starting from the workshop template, into the folder the user already opened
+
+The user's session folder is the project. Do not create a subfolder. Clone the template in place, drop its history, then make it their own repo:
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+git clone --depth 1 https://github.com/mindlogic-ai/vibe-starter.git /tmp/vibe-starter-tpl
+cp -R /tmp/vibe-starter-tpl/. . && rm -rf .git /tmp/vibe-starter-tpl
+git init -b main
+git add -A
+git commit -m "first save"
+gh repo create <repo-name> --private --source=. --push
+```
+If the folder already has a `.claude/` directory from the app, that is fine; it is not in the template and gets committed only if the user wants (it is harmless).
+
+### 1b. Any other project
 
 Inside the project folder:
 ```bash
