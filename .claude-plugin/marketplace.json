@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "vibe-kit",
+  "description": "MindLogic vibe-coding workshop kit: beginner-safe skills for GitHub, Supabase, Vercel, the FactChat Gateway, the Informe CLI, and UI polish. No MCP required.",
+  "owner": { "name": "Jaeho Shin", "email": "jaeho.shin@mindlogic.ai" },
+  "plugins": [
+    {
+      "name": "vibe-kit",
+      "description": "Workshop flow, prompt cards, and API-key-based recipes for GitHub, Supabase, Vercel, FactChat Gateway, Informe CLI, plus impeccable and make-interfaces-feel-better for design polish.",
+      "version": "0.1.0",
+      "source": "./",
+      "category": "development",
+      "homepage": "https://github.com/mindlogic-ai/vibe-kit"
+    }
+  ]
+}

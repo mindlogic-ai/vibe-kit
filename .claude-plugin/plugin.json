@@ -1,0 +1,6 @@
+{
+  "name": "vibe-kit",
+  "description": "MindLogic vibe-coding workshop kit: workshop flow and prompt cards, GitHub/Supabase/Vercel/FactChat/Informe recipes, and UI polish skills.",
+  "version": "0.1.0",
+  "author": { "name": "Jaeho Shin", "email": "jaeho.shin@mindlogic.ai" }
+}
