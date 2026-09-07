@@ -1,6 +1,11 @@
 ---
 name: informe-cli
-description: "Ask about anything inside the company — production data, org knowledge, Slack, meeting notes, the business ledger, leads. Triggers on "ask Informe", "what happened with X at our company", revenue/user/credit lookups. Talks to MindLogic's internal agent Informe from the terminal via `inf`. Install needs three things first: uv, cloudflared, and a mindlogic-ai GitHub invite."
+description: >-
+  Ask about anything inside the company (production data, org knowledge, Slack,
+  meeting notes, the business ledger, leads). Triggers on "ask Informe", "what
+  happened with X at our company", revenue/user/credit lookups. Talks to MindLogic's
+  internal agent Informe from the terminal via inf. Install needs three things
+  first - uv, cloudflared, and a mindlogic-ai GitHub invite.
 ---
 
 # Installing the Informe CLI (after the workshop, 10 minutes)
