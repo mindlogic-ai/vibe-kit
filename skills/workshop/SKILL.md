@@ -33,7 +33,7 @@ Say this in the user's language, in plain words, with this picture:
 ```
 
 - **화면 (frontend)**: what the person sees and clicks. Ours is written with Next.js.
-- **서버 (backend)**: the machine that runs the code and hands the screen to the browser. During building it is your own laptop (`localhost:3000`, an address only your computer can open). After deploying it is Vercel, which gives an internet address anyone can open.
+- **서버 (backend)**: the machine that runs the app code, hands the screen to the browser, and does anything that needs a secret key (an AI call, for example). During building it is your own laptop (`localhost:3000`, an address only your computer can open). After deploying it is Vercel, which gives an internet address anyone can open. In this board the screen saves to Supabase directly, so the server box only serves the page until AI is added. If someone says "isn't Supabase the backend?", say they are half right: Supabase also carries the save/read API, which is why the screen can talk to it directly.
 - **데이터베이스**: where data lives so it survives a refresh and is the same on your phone. Ours is a Supabase table. A table is one spreadsheet sheet; a row is one record.
 - **배포**: copying the app from your laptop to Vercel so it gets an internet address.
 - **환경변수 (`.env.local`)**: a file holding the two keys that let the screen talk to the database. It never goes to GitHub.
@@ -58,6 +58,25 @@ After step 6, stop and recap in three lines: 화면 (Next.js), 서버 (Vercel), 
 ## Make it yours
 
 No fixed order and no clock from here. If they wrote an idea on the signup form, start from that. Two shapes:
+
+**A good first message says four things.** Coach the user toward this, in their language, without asking for code: (1) who uses it and for what, one sentence; (2) the three or four fields the screen shows, as words; (3) what is out for tonight (login, payment, notifications); (4) how they will check it ("tell me what to click on localhost:3000 when done"). If a message is missing one of these, ask for that one thing only, then build.
+
+**Signup ideas and the smallest version to build tonight** (the guide shows the same list with copy-paste messages):
+
+| Idea | Shape | Tonight's smallest version |
+|---|---|---|
+| to-do app | A | due date + priority, overdue rows first and red, "today only" filter |
+| personal work dashboard | A | three tabs (in progress / due this week / done), counts on top |
+| life or cycle tracker | A | date, kind, 1-5 score, memo; 30-day line chart; one-button "log today" |
+| child growth planner | A | date, height, weight, one line; height/weight chart; photos later |
+| shopping mall | A | products (name, price, image url, stock), detail page, cart count; `/admin` add-product form; no payment |
+| monthly finance data | B | read the Excel files in the folder, monthly totals by category, flag >20% month-over-month changes, save a new Excel |
+| training material (교안) | B | table of contents first, wait for OK, then per-session goals and exercises |
+| PPT proposal | B | 12-slide outline (title + three key messages each), then `.pptx` via document-skills |
+| tender summary + alerts | B first | table per notice: name, budget, deadline, fit (yes/maybe/no) + one-line why, sorted by deadline; automation is the next step |
+| no idea yet | A | pick from: meeting decisions log, team lunch poll, expense log, customer inquiry log, reading log, habit check. Prefer whatever they do in Excel or memos today. Three fields only |
+
+When the user is stuck on what to ask next, offer this: summarize what exists in three lines and propose three next steps, let them pick.
 
 ### Shape A: the same app, their words (cards, use in any order)
 
