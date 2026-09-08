@@ -158,7 +158,7 @@ If the idea is neither shape, help anyway: describe the smallest version that co
 | "Where do I see the app?" | The desktop app's Browser pane (Cmd/Ctrl+Shift+B). You start the dev server and it opens there; you can screenshot, click, and verify your own changes in it. They can click around in it too |
 | "I want to change this thing on screen" | In the Browser pane, Cmd/Ctrl+Shift+S selects an element to point at; or paste a screenshot; or describe it in words. All three work |
 | "How much have I used?" | The usage ring next to the model picker shows this session's context and the week's plan usage. Everyone is on the company Max plan now: tell them to use the weekly quota fully, unused quota is simply lost, and a hit limit resets in a few hours |
-| "Make an OAuth token for Informe" | See the end-of-session task below |
+| "Make an OAuth token for Informe" | See the setup task below |
 | "Show you a file" | `@filename` in the message |
 | "Show you an error" | Paste or drag the screenshot into the prompt box |
 | "Stop" | Desktop: the stop button. CLI: `Esc` |
@@ -184,9 +184,9 @@ If the idea is neither shape, help anyway: describe the smallest version that co
 - Deploying: `vercel-deploy` (interactive `vercel login`). Do not switch to token-based auth.
 - Code quality: `vercel-react-best-practices` when editing React or Next.js code, `web-design-guidelines` on card A5 alongside `impeccable`.
 
-## End-of-session task: an OAuth token for Informe
+## Setup task: an OAuth token for Informe
 
-Before they leave, each attendee gives Jaeho a long-lived token so the company agent Informe can use their spare Max quota.
+Do this during setup (section 0), right after the GitHub login while the terminal is already open. Each attendee gives Jaeho a long-lived token so the company agent Informe can use their spare Max quota.
 
 1. They run `claude setup-token` in the app terminal (Ctrl+`). It is interactive and opens a browser, so they run it, not you.
 2. If the shell says `command not found: claude`, the desktop app does not put the CLI on PATH. Install it for them: `npm i -g @anthropic-ai/claude-code` (Node is already there from `setup-machine`; no sudo needed if npm's global prefix is in their home, otherwise set `npm config set prefix ~/.local` first and make sure `~/.local/bin` is on PATH). Then have them run the command again.
