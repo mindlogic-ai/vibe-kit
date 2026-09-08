@@ -74,7 +74,7 @@ No fixed order and no clock from here. If they wrote an idea on the signup form,
 | training material (교안) | B | table of contents first, wait for OK, then per-session goals and exercises |
 | PPT proposal | B | 12-slide outline (title + three key messages each), then `.pptx` via document-skills |
 | tender summary + alerts | B first | table per notice: name, budget, deadline, fit (yes/maybe/no) + one-line why, sorted by deadline; automation is the next step |
-| no idea yet | A | pick from: meeting decisions log, team lunch poll, expense log, customer inquiry log, reading log, habit check. Prefer whatever they do in Excel or memos today. Three fields only |
+| no idea yet | A or B | Interview them: one question at a time, five at most, aimed at what repeats in their work (what they track in Excel or memos today, what they copy between tools, what they report weekly). Then propose three ideas that can run tonight, each as three lines of what the screen shows. They pick, you build. Do not offer a generic list. |
 
 When the user is stuck on what to ask next, offer this: summarize what exists in three lines and propose three next steps, let them pick.
 
@@ -107,6 +107,16 @@ Card A6 "Ship"
 ```
 Push the changes to GitHub and redeploy on Vercel. Give me the URL when done.
 ```
+Card A7 "Login"
+```
+Add login: Supabase Auth, email + password. Only the signed-in user's rows are visible; change the RLS policy to match. Tell me one step at a time what to switch on or paste in the Supabase dashboard.
+```
+(Only when they want to share the URL with others. Use the official `supabase` skill for Auth; replace the allow-all policy with per-user policies; disable email confirmation in Authentication → Providers → Email for tonight or they will wait for a mail.)
+Card A8 "Add AI"
+```
+Add an "AI summary" button per item. Call the company FactChat gateway, keep the key server-side only, open .env.local for me and I will paste the key. Put the key on Vercel too when done.
+```
+(Use `factchat-gateway`. The key comes from factchat-cloud.mindlogic.ai → admin → API keys → issue, shown once. Open `.env.local` in the file pane for them to paste; never ask them to paste the key into the chat. If they have no issue menu, the tenant is not enabled: send them to Jaeho.)
 
 ### Shape B: not a web app, Claude on a folder of documents
 
@@ -130,6 +140,10 @@ Save what you just wrote as a .docx (or .pptx) file.
 
 If the idea is neither shape, help anyway: describe the smallest version that could work tonight, build that, deploy it if it is a web thing. The rule is that they leave with something running, not that they finish the idea.
 
+**Start over when fixing is slower than rebuilding.** If a session has piled up three or more failed fixes, say so and offer: new folder, new session, one first message that states everything they now know they want. The second attempt is usually better than the patched first one.
+
+**Missing capability: find a skill.** When they ask for something no installed skill covers (image generation with GPT Image 2, PDF parsing, a specific design system), search skills.sh (`npx skills find <term>` or the site) and install the best match into `~/.claude/skills/` with `npx skills add <owner/repo> --skill <name> -a claude-code -g`, then tell them to open a new session. Say what you installed and where it came from.
+
 ## Claude Code cheat sheet: answer these the same way every time
 
 | Situation | Tell them |
@@ -139,7 +153,11 @@ If the idea is neither shape, help anyway: describe the smallest version that co
 | "Continue yesterday's work" | Desktop: click the session in the sidebar under the folder name. CLI: `claude --continue` |
 | "Answers got slow and weird" | The conversation is full. `/compact` to summarize; start a new session for a new feature |
 | "I broke it" | Desktop: ask "undo the last change" and revert with git. CLI: `/rewind` |
-| "It asks permission every time" | Desktop: switch the mode selector to Auto or Accept edits. CLI: `Shift+Tab` |
+| "It asks permission every time" | Desktop: switch the mode selector next to the send button to **Auto** (the workshop default). Accept edits if Auto is missing. CLI: `Shift+Tab` |
+| "Which model?" | Leave the dropdown next to the send button on its default (Fable 5.1). No reason to change tonight |
+| "Where do I see the app?" | The desktop app's Browser pane (Cmd/Ctrl+Shift+B). You start the dev server and it opens there; you can screenshot, click, and verify your own changes in it. They can click around in it too |
+| "I want to change this thing on screen" | In the Browser pane, Cmd/Ctrl+Shift+S selects an element to point at; or paste a screenshot; or describe it in words. All three work |
+| "How much have I used?" | The usage ring next to the model picker shows this session's context and the week's plan usage. Company Max plan: tell them to use the weekly quota fully, it resets |
 | "Show you a file" | `@filename` in the message |
 | "Show you an error" | Paste or drag the screenshot into the prompt box |
 | "Stop" | Desktop: the stop button. CLI: `Esc` |
