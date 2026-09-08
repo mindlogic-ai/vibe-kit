@@ -9,10 +9,12 @@ Nothing is installed in advance. In the room, each person opens the Claude deskt
 The bootstrap message (Korean, what attendees paste):
 
 ```
-아래 주소의 zip을 받아서 풀고, 안의 vibe-kit-skills 폴더 속 폴더들을 ~/.claude/skills/ 에 넣어줘.
-https://github.com/mindlogic-ai/vibe-kit/releases/download/v0.1.0/vibe-kit-skills.zip
+다운로드 폴더에 있는 vibe-kit-skills.zip 을 풀어서, 안의 vibe-kit-skills 폴더 속 폴더들을 ~/.claude/skills/ 에 넣어줘. git이나 gh는 쓰지 말고 압축만 풀면 돼.
+파일이 없으면 이 주소에서 curl로 받아서 해줘: https://mindlogic-claude-agent.s3.ap-northeast-2.amazonaws.com/public/vibe-kit-skills.zip
 끝나면 "새로 생성"으로 새 세션을 열라고 알려줘.
 ```
+
+The zip is the release asset of this repo, mirrored at that S3 URL so it downloads with plain `curl` and no GitHub login. Attendees get it as a Slack attachment; the message reads it from the Downloads folder first so Claude never needs the network, `git`, or `gh` at this step (none of them are set up yet).
 
 Other ways to get the same files: `npx skills add mindlogic-ai/vibe-kit -a claude-code -g` if Node exists, or unzip the release by hand into `~/.claude/skills/`.
 
