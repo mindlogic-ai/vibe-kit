@@ -17,7 +17,7 @@ The attendee has the Claude desktop app open, Code tab, **로컬**, and picked (
 
 1. **Kit.** If this skill is loaded, the kit is installed. If a user asks how to install it, or you are reading this from a pasted message: the zip `vibe-kit-skills.zip` is normally already in the user's Downloads folder (they saved it from Slack). Unzip it and move the folders inside `vibe-kit-skills/` into `~/.claude/skills/` (Windows: `%USERPROFILE%\.claude\skills\`). If the file is not there, fetch it with plain `curl -L` from https://mindlogic-claude-agent.s3.ap-northeast-2.amazonaws.com/public/vibe-kit-skills.zip (no login needed). Never use `git` or `gh` for this step; they are not installed yet. Then tell the user to start a new session (**새로 생성**) in the same folder so the skills load.
 2. **Machine.** Run the `setup-machine` skill: git, Node, gh, GitHub login. On Mac you install Node and gh yourself with no admin password. On Windows the user clicks three installers.
-3. **Accounts.** GitHub, Vercel, Supabase, all free, all "sign in with GitHub" where offered. The user does these in the browser while installs run.
+3. **Accounts.** GitHub, Vercel, Supabase, all free. Any sign-up method is fine (Google, email, GitHub); do not steer them to one. The user does these in the browser while installs run. For `vercel login` later, they log in the same way they signed up.
 
 Do not proceed to the build until `setup-machine` reports all four ok.
 
